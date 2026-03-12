@@ -39,7 +39,7 @@ const Login = ({ onLogin }: { onLogin: (user: any) => void }) => {
     });
     const data = await res.json();
     if (data.success) onLogin(data.user);
-    else setError('خطأ في اسم المستخدم أو كلمة المرور');
+    else setError(data.message || 'خطأ في اسم المستخدم أو كلمة المرور');
   };
 
   return (
